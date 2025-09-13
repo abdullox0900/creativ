@@ -3,15 +3,19 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useEffect, useRef, useState } from 'react'
 import { FaBitcoin, FaEthereum } from 'react-icons/fa'
-import { SiCardano, SiChainlink, SiDogecoin, SiSolana } from 'react-icons/si'
+import { SiDogecoin, SiSolana } from 'react-icons/si'
 import { TbCurrencyDollar } from 'react-icons/tb'
 import { Link } from 'react-router-dom'
+import aboutDinoImg from '../assets/about-dino-img.png'
 import dinoImg from '../assets/dino-img.png'
+import dinoLichGif from '../assets/video/dino-lich.gif'
+import dinoTokenomicsGif from '../assets/video/dino-tokenomics.gif'
+import dinosaurKaktusGif from '../assets/video/dinosaur-kaktus.gif'
+import dinosaurMapGif from '../assets/video/dinosaur-map.gif'
 import Footer from '../components/Footer'
 import Header from '../components/Header'
 import HeroLines from '../components/HeroLines'
 import ProgressLine from '../components/ProgressLine'
-import Button from '../components/UI/Button/Button'
 export default function Home() {
 	const mainRef = useRef(null)
 	const dinoRef = useRef(null)
@@ -113,17 +117,284 @@ export default function Home() {
 			<ProgressLine />
 			<Header />
 			<main ref={mainRef}>
-				<section className='relative h-screen max-w-6xl mx-auto px-4 pt-16 grid md:grid-cols-2 gap-10 items-center'>
+				<section className='relative h-screen max-w-6xl mx-auto px-4 pt-16 grid md:grid-cols-2 gap-10 items-center overflow-hidden'>
 					<HeroLines />
+
+					{/* Animated Cartoon Background Elements */}
+					<div className='absolute inset-0 -z-10 overflow-hidden'>
+						{/* Animated Grid Lines */}
+						<div className='absolute inset-0 opacity-20'>
+							{/* Vertical Lines */}
+							{Array.from({ length: 12 }).map((_, i) => (
+								<motion.div
+									key={`v-${i}`}
+									className='absolute top-0 bottom-0 w-px bg-gradient-to-b from-teal-400 to-green-500'
+									style={{ left: `${(i + 1) * 8.33}%` }}
+									animate={{
+										opacity: [0.1, 0.6, 0.1],
+										scaleY: [0.8, 1.2, 0.8],
+									}}
+									transition={{
+										repeat: Infinity,
+										duration: 4 + i * 0.3,
+										ease: 'easeInOut',
+										delay: i * 0.2,
+									}}
+								/>
+							))}
+
+							{/* Horizontal Lines */}
+							{Array.from({ length: 8 }).map((_, i) => (
+								<motion.div
+									key={`h-${i}`}
+									className='absolute left-0 right-0 h-px bg-gradient-to-r from-teal-400 to-green-500'
+									style={{ top: `${(i + 1) * 12.5}%` }}
+									animate={{
+										opacity: [0.1, 0.6, 0.1],
+										scaleX: [0.8, 1.2, 0.8],
+									}}
+									transition={{
+										repeat: Infinity,
+										duration: 3.5 + i * 0.4,
+										ease: 'easeInOut',
+										delay: i * 0.15,
+									}}
+								/>
+							))}
+
+							{/* Diagonal Moving Lines */}
+							<motion.div
+								className='absolute top-0 left-0 w-full h-full'
+								style={{
+									background: `repeating-linear-gradient(
+										45deg,
+										transparent,
+										transparent 40px,
+										rgba(20, 184, 166, 0.1) 41px,
+										rgba(34, 197, 94, 0.1) 42px,
+										transparent 43px
+									)`,
+								}}
+								animate={{
+									x: [-100, 100],
+									opacity: [0.1, 0.3, 0.1],
+								}}
+								transition={{
+									repeat: Infinity,
+									duration: 8,
+									ease: 'linear',
+								}}
+							/>
+
+							<motion.div
+								className='absolute top-0 left-0 w-full h-full'
+								style={{
+									background: `repeating-linear-gradient(
+										-45deg,
+										transparent,
+										transparent 50px,
+										rgba(20, 184, 166, 0.08) 51px,
+										rgba(34, 197, 94, 0.08) 52px,
+										transparent 53px
+									)`,
+								}}
+								animate={{
+									x: [100, -100],
+									opacity: [0.1, 0.25, 0.1],
+								}}
+								transition={{
+									repeat: Infinity,
+									duration: 10,
+									ease: 'linear',
+									delay: 2,
+								}}
+							/>
+						</div>
+
+						{/* Floating Colorful Shapes */}
+						<motion.div
+							className='absolute top-20 left-10 w-24 h-24 rounded-full bg-gradient-to-br from-pink-400 to-purple-500 opacity-60'
+							animate={{
+								x: [0, 50, -30, 0],
+								y: [0, -40, 20, 0],
+								scale: [1, 1.2, 0.8, 1],
+								rotate: [0, 180, 360],
+							}}
+							transition={{ repeat: Infinity, duration: 8, ease: 'easeInOut' }}
+						/>
+
+						<motion.div
+							className='absolute top-40 right-20 w-16 h-16 rounded-lg bg-gradient-to-br from-cyan-400 to-blue-500 opacity-50'
+							animate={{
+								x: [0, -60, 40, 0],
+								y: [0, 30, -50, 0],
+								rotate: [0, -90, 90, 0],
+								scale: [1, 0.7, 1.3, 1],
+							}}
+							transition={{
+								repeat: Infinity,
+								duration: 6,
+								ease: 'easeInOut',
+								delay: 1,
+							}}
+						/>
+
+						<motion.div
+							className='absolute bottom-32 left-1/4 w-20 h-20 bg-gradient-to-br from-yellow-400 to-orange-500 opacity-70'
+							style={{ borderRadius: '30% 70% 70% 30% / 30% 30% 70% 70%' }}
+							animate={{
+								x: [0, 70, -20, 0],
+								y: [0, -60, 40, 0],
+								rotate: [0, 120, 240, 360],
+								scale: [1, 1.4, 0.6, 1],
+							}}
+							transition={{
+								repeat: Infinity,
+								duration: 10,
+								ease: 'easeInOut',
+								delay: 2,
+							}}
+						/>
+
+						<motion.div
+							className='absolute top-60 left-1/2 w-12 h-12 bg-gradient-to-br from-green-400 to-teal-500 opacity-60'
+							style={{ borderRadius: '50% 20% 80% 40%' }}
+							animate={{
+								x: [0, -40, 60, 0],
+								y: [0, 50, -30, 0],
+								rotate: [0, -180, 180, 0],
+								scale: [1, 0.5, 1.5, 1],
+							}}
+							transition={{
+								repeat: Infinity,
+								duration: 7,
+								ease: 'easeInOut',
+								delay: 3,
+							}}
+						/>
+
+						{/* Bouncing Stars/Sparkles */}
+						<motion.div
+							className='absolute top-16 right-1/3 text-4xl opacity-80'
+							animate={{
+								y: [0, -20, 0],
+								rotate: [0, 360],
+								scale: [1, 1.3, 1],
+							}}
+							transition={{ repeat: Infinity, duration: 3, ease: 'easeInOut' }}
+						>
+							⭐
+						</motion.div>
+
+						<motion.div
+							className='absolute bottom-20 right-10 text-3xl opacity-70'
+							animate={{
+								y: [0, -30, 0],
+								rotate: [0, -360],
+								scale: [1, 1.5, 1],
+							}}
+							transition={{
+								repeat: Infinity,
+								duration: 4,
+								ease: 'easeInOut',
+								delay: 1.5,
+							}}
+						>
+							✨
+						</motion.div>
+
+						<motion.div
+							className='absolute top-1/3 left-20 text-2xl opacity-60'
+							animate={{
+								x: [0, 20, 0],
+								y: [0, -15, 0],
+								rotate: [0, 180, 360],
+								scale: [1, 1.2, 1],
+							}}
+							transition={{
+								repeat: Infinity,
+								duration: 5,
+								ease: 'easeInOut',
+								delay: 2.5,
+							}}
+						>
+							🚀
+						</motion.div>
+
+						<motion.div
+							className='absolute bottom-40 left-10 text-3xl opacity-75'
+							animate={{
+								x: [0, 30, 0],
+								y: [0, -25, 0],
+								rotate: [0, -180, 0],
+								scale: [1, 0.8, 1.4, 1],
+							}}
+							transition={{
+								repeat: Infinity,
+								duration: 6,
+								ease: 'easeInOut',
+								delay: 4,
+							}}
+						>
+							💎
+						</motion.div>
+
+						{/* Floating Lines/Trails */}
+						<motion.div
+							className='absolute top-24 left-1/3 w-32 h-1 bg-gradient-to-r from-pink-500 to-transparent opacity-50'
+							animate={{
+								x: [0, 100, -50, 0],
+								scaleX: [1, 1.5, 0.5, 1],
+								opacity: [0.5, 0.8, 0.3, 0.5],
+							}}
+							transition={{ repeat: Infinity, duration: 9, ease: 'easeInOut' }}
+						/>
+
+						<motion.div
+							className='absolute bottom-24 right-1/4 w-24 h-1 bg-gradient-to-l from-cyan-500 to-transparent opacity-60'
+							animate={{
+								x: [0, -80, 40, 0],
+								scaleX: [1, 0.5, 1.8, 1],
+								opacity: [0.6, 0.9, 0.2, 0.6],
+							}}
+							transition={{
+								repeat: Infinity,
+								duration: 7,
+								ease: 'easeInOut',
+								delay: 3,
+							}}
+						/>
+
+						{/* Pulsing Circles */}
+						<motion.div
+							className='absolute top-52 right-16 w-8 h-8 rounded-full bg-gradient-to-br from-purple-400 to-pink-500 opacity-40'
+							animate={{
+								scale: [1, 2, 1],
+								opacity: [0.4, 0.8, 0.4],
+							}}
+							transition={{ repeat: Infinity, duration: 4, ease: 'easeInOut' }}
+						/>
+
+						<motion.div
+							className='absolute bottom-16 left-1/2 w-6 h-6 rounded-full bg-gradient-to-br from-yellow-400 to-red-500 opacity-50'
+							animate={{
+								scale: [1, 1.8, 1],
+								opacity: [0.5, 0.9, 0.5],
+							}}
+							transition={{
+								repeat: Infinity,
+								duration: 3,
+								ease: 'easeInOut',
+								delay: 2,
+							}}
+						/>
+					</div>
+
 					<div className='space-y-6'>
-						<h1 className='text-[30px] font-nosifer leading-tight text-transparent bg-gradient-to-r from-pink-400 to-cyan-400 bg-clip-text'>
+						<h1 className='text-[26px] font-nosifer leading-tight text-transparent bg-gradient-to-r from-pink-400 to-cyan-400 bg-clip-text'>
 							WELCOME TO $DINO TOKEN PRESALE
 						</h1>
-						<img src={dinoImg} alt='' className='w-[450px] h-[350px]' />
-						<p className='text-neutral-600 max-w-prose font-roboto'>
-							Legendary meme vibes meet clean design. Jump in early and ride
-							with the Dino family.
-						</p>
+						<img src={dinoImg} alt='' className='w-[450px] h-[400px]' />
 						<div className='flex gap-3'>
 							<a
 								href='#presale'
@@ -140,96 +411,9 @@ export default function Home() {
 						</div>
 					</div>
 					<div className='relative max-w-sm ml-auto'>
-						{/* Floating dino characters behind calculator */}
-						<div className='absolute inset-0 -z-10 overflow-hidden'>
-							<motion.img
-								src='/src/assets/dino-flying.png'
-								alt='Flying Dino'
-								className='absolute top-10 -left-8 w-8 h-8 object-contain opacity-60'
-								animate={{ x: [0, 30, 0], y: [0, -20, 0], rotate: [0, 10, 0] }}
-								transition={{
-									repeat: Infinity,
-									duration: 4,
-									ease: 'easeInOut',
-								}}
-							/>
-							<motion.img
-								src='/src/assets/dino-standing.png'
-								alt='Standing Dino'
-								className='absolute top-20 -right-10 w-10 h-10 object-contain opacity-50'
-								animate={{ x: [0, -25, 0], y: [0, 15, 0] }}
-								transition={{
-									repeat: Infinity,
-									duration: 3.5,
-									ease: 'easeInOut',
-									delay: 0.5,
-								}}
-							/>
-							<motion.img
-								src='/src/assets/dino-happy.png'
-								alt='Happy Dino'
-								className='absolute top-40 -left-6 w-6 h-6 object-contain opacity-40'
-								animate={{ x: [0, 20, 0], y: [0, -10, 0] }}
-								transition={{
-									repeat: Infinity,
-									duration: 5,
-									ease: 'easeInOut',
-									delay: 1,
-								}}
-							/>
-							<motion.img
-								src='/src/assets/dino-running.png'
-								alt='Running Dino'
-								className='absolute bottom-20 -right-8 w-9 h-9 object-contain opacity-50'
-								animate={{ x: [0, -15, 0], y: [0, 12, 0] }}
-								transition={{
-									repeat: Infinity,
-									duration: 4.5,
-									ease: 'easeInOut',
-									delay: 1.5,
-								}}
-							/>
-							<motion.img
-								src='/src/assets/dino-cactus.png'
-								alt='Dino with Cactus'
-								className='absolute bottom-10 -left-4 w-7 h-7 object-contain opacity-30'
-								animate={{ x: [0, 18, 0], y: [0, -8, 0] }}
-								transition={{
-									repeat: Infinity,
-									duration: 3.8,
-									ease: 'easeInOut',
-									delay: 2,
-								}}
-							/>
-						</div>
-
-						<motion.div
-							ref={dinoRef}
-							className='absolute -top-8 left-1/2 -translate-x-1/2 z-10'
-							animate={{ rotate: [0, 5, -5, 0], y: [0, -5, 0] }}
-							transition={{ repeat: Infinity, duration: 2.5 }}
-						>
-							<img
-								src='/src/assets/dino-standing.png'
-								alt='Calculator Dino'
-								className='w-16 h-16 object-contain'
-								onLoad={() =>
-									setDinosLoaded(prev => ({ ...prev, calculator: true }))
-								}
-								onError={() =>
-									setDinosLoaded(prev => ({ ...prev, calculator: false }))
-								}
-							/>
-							{/* Fallback */}
-							{dinosLoaded.calculator === false && (
-								<div className='w-16 h-16 bg-green-500 rounded-full flex items-center justify-center'>
-									<TbCurrencyDollar className='text-2xl text-white' />
-								</div>
-							)}
-						</motion.div>
 						<div
 							id='presale'
-							className='bg-white rounded-xl border border-black/10 p-4 pt-8 shadow-xl'
+							className='bg-white rounded-xl border border-black/10 p-4 pt-6 shadow-xl'
 						>
 							{/* Price Header */}
 							<div className='flex justify-between items-center mb-3'>
@@ -245,17 +429,8 @@ export default function Home() {
 									<span className='text-white font-bold text-xs'>
 										NEXT PRICE INCREASE
 									</span>
-									<div className='w-8 h-8 bg-emerald-400 rounded-full flex items-center justify-center overflow-hidden'>
-										<img
-											src='/src/assets/dino-flying.png'
-											alt='Mini Dino'
-											className='w-6 h-6 object-contain'
-											onError={e => {
-												e.target.style.display = 'none'
-												e.target.nextSibling.style.display = 'block'
-											}}
-										/>
-										<TbCurrencyDollar className='text-lg text-white hidden' />
+									<div className='w-8 h-8 bg-emerald-400 rounded-full flex items-center justify-center'>
+										<TbCurrencyDollar className='text-lg text-white' />
 									</div>
 								</div>
 							</div>
@@ -303,7 +478,7 @@ export default function Home() {
 									</div>
 									<div className='flex items-end'>
 										<button className='bg-emerald-500 text-white px-3 py-2 rounded-lg font-bold text-xs'>
-											⚡ ETH ▼
+											ETH ▼
 										</button>
 									</div>
 								</div>
@@ -332,16 +507,7 @@ export default function Home() {
 										DINO BALANCE
 									</span>
 									<div className='flex items-center gap-1'>
-										<img
-											src='/src/assets/dino-flying.png'
-											alt='Dino Balance'
-											className='w-5 h-5 object-contain'
-											onError={e => {
-												e.target.style.display = 'none'
-												e.target.nextSibling.style.display = 'inline'
-											}}
-										/>
-										<TbCurrencyDollar className='text-lg text-green-500 hidden' />
+										<TbCurrencyDollar className='text-lg text-green-500' />
 										<span className='text-neutral-900 text-sm font-bold'>
 											0
 										</span>
@@ -352,125 +518,175 @@ export default function Home() {
 					</div>
 				</section>
 
-				<section className='h-screen relative overflow-hidden bg-gradient-to-br from-blue-500 via-purple-500 to-green-400'>
-					<div className='absolute inset-0 bg-gradient-to-br from-blue-400/30 via-purple-400/30 to-green-300/30'></div>
+				<section className='min-h-screen relative overflow-hidden bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600'>
+					<div className='absolute inset-0 bg-gradient-to-br from-indigo-500/40 via-purple-500/40 to-pink-500/40'></div>
 
-					{/* Floating elements */}
-					<div className='absolute top-10 left-10 w-24 h-24 rounded-full bg-green-300/40 animate-pulse'></div>
-					<div className='absolute bottom-20 right-10 w-16 h-16 rounded-full bg-yellow-300/40 animate-bounce'></div>
-					<div className='absolute top-1/2 left-10 w-12 h-12 rounded-full bg-pink-300/50 animate-ping'></div>
+					{/* Enhanced Floating elements */}
+					<div className='absolute top-16 left-16 w-32 h-32 rounded-full bg-cyan-300/30 animate-pulse'></div>
+					<div className='absolute bottom-24 left-24 w-20 h-20 rounded-full bg-yellow-300/40 animate-bounce'></div>
+					<div className='absolute top-1/3 left-12 w-16 h-16 rounded-full bg-green-300/50 animate-ping'></div>
+					<div className='absolute top-20 right-20 w-24 h-24 rounded-full bg-pink-300/35 animate-pulse delay-500'></div>
+					<div className='absolute bottom-32 right-32 w-16 h-16 rounded-full bg-blue-300/45 animate-bounce delay-300'></div>
 
-					<div className='relative z-10 h-full max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-10 items-center'>
-						<div className='space-y-6'>
-							<h2 className='text-4xl font-nosifer text-yellow-300 drop-shadow-lg'>
+					<div className='relative z-10 min-h-screen max-w-7xl mx-auto px-4 py-16 grid lg:grid-cols-2 gap-12 items-center'>
+						{/* Left Content */}
+						<div className='space-y-8'>
+							<motion.h2
+								className='text-5xl lg:text-6xl font-nosifer text-transparent bg-gradient-to-r from-yellow-300 via-orange-300 to-pink-300 bg-clip-text drop-shadow-2xl'
+								initial={{ opacity: 0, x: -50 }}
+								whileInView={{ opacity: 1, x: 0 }}
+								transition={{ duration: 0.8, ease: 'easeOut' }}
+								viewport={{ once: true }}
+							>
 								About $DINO Family
-							</h2>
-							<p className='text-white text-lg font-roboto leading-relaxed'>
+							</motion.h2>
+
+							<motion.p
+								className='text-white text-xl font-roboto leading-relaxed max-w-2xl backdrop-blur-sm bg-white/10 p-6 rounded-2xl border border-white/20'
+								initial={{ opacity: 0, y: 30 }}
+								whileInView={{ opacity: 1, y: 0 }}
+								transition={{ duration: 0.8, delay: 0.2 }}
+								viewport={{ once: true }}
+							>
 								$DINO is a playful tribute to internet culture with clean,
 								confident visuals. Built for community and fun, combining meme
 								culture with serious blockchain innovation.
-							</p>
-							<div className='flex gap-4'>
-								<button className='bg-pink-400 hover:bg-pink-500 text-white px-6 py-3 rounded-lg font-bold text-sm shadow-lg transform hover:scale-105 transition-all'>
-									WHITEPAPER
-								</button>
-								<button className='bg-cyan-400 hover:bg-cyan-500 text-white px-6 py-3 rounded-lg font-bold text-sm shadow-lg transform hover:scale-105 transition-all'>
-									BUY NOW
-								</button>
-							</div>
-						</div>
+							</motion.p>
 
-						{/* Features Grid with Center Character */}
-						<div className='relative'>
-							{/* Center Character */}
-							<div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20'>
-								<motion.div
-									className='w-20 h-20 rounded-full bg-yellow-300 border-4 border-white shadow-lg grid place-items-center'
-									animate={{ y: [0, -10, 0] }}
-									transition={{
-										repeat: Infinity,
-										duration: 2,
-										ease: 'easeInOut',
-									}}
-								>
-									<img
-										src='/src/assets/dino-running.png'
-										alt='Running Dino Center'
-										className='w-12 h-12 object-contain'
-										onError={e => {
-											e.target.style.display = 'none'
-											e.target.nextSibling.style.display = 'block'
-										}}
-									/>
-									<TbCurrencyDollar className='text-4xl text-green-600 hidden' />
-								</motion.div>
-							</div>
-
-							{/* Feature Cards */}
-							<div className='grid grid-cols-2 gap-4 relative z-10'>
+							{/* Feature highlights */}
+							<motion.div
+								className='grid grid-cols-1 sm:grid-cols-2 gap-4'
+								initial={{ opacity: 0, y: 30 }}
+								whileInView={{ opacity: 1, y: 0 }}
+								transition={{ duration: 0.8, delay: 0.4 }}
+								viewport={{ once: true }}
+							>
 								{[
 									{
-										icon: '⚡',
-										title: 'BUILT ON ETHEREUM',
-										desc: 'Harnesses the power of Ethereum technology to deliver faster, cheaper, and scalable blockchain solutions.',
+										icon: <SiDogecoin className='text-2xl text-yellow-400' />,
+										title: 'Community Driven',
+										desc: 'Built by the people, for the people',
 									},
 									{
-										icon: '🔗',
-										title: 'SEAMLESS INTEROPERABILITY',
-										desc: 'Connects ecosystems with ease, allowing users to move assets quickly and securely across chains.',
+										icon: <FaEthereum className='text-2xl text-blue-400' />,
+										title: 'Lightning Fast',
+										desc: 'Powered by Ethereum technology',
 									},
 									{
-										icon: '🏛️',
-										title: 'COMMUNITY-DRIVEN VISION',
-										desc: 'Empowering the community with decentralized governance, ensuring every voice shapes the future.',
+										icon: <FaBitcoin className='text-2xl text-orange-400' />,
+										title: 'Premium Quality',
+										desc: 'Clean design meets innovation',
 									},
 									{
-										icon: '🚀',
-										title: 'DOUBLE THE REWARDS',
-										desc: 'Stake $DINO and earn enhanced rewards, powered by the efficiency of blockchain scalability.',
+										icon: <SiSolana className='text-2xl text-purple-400' />,
+										title: 'Global Reach',
+										desc: 'Connecting crypto enthusiasts worldwide',
 									},
 								].map((feature, i) => (
 									<div
 										key={i}
-										className='bg-teal-500 rounded-xl p-4 border-2 border-white shadow-lg transform hover:scale-105 transition-transform'
+										className='bg-gradient-to-br from-white/20 to-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20 hover:bg-white/30 transition-all duration-300 transform hover:scale-105'
 									>
-										<div className='bg-pink-300 rounded-lg w-8 h-8 flex items-center justify-center mb-2 overflow-hidden'>
-											<img
-												src={`/src/assets/dino-${
-													['flying', 'standing', 'happy', 'running'][i]
-												}.png`}
-												alt={`Feature Dino ${i + 1}`}
-												className='w-6 h-6 object-contain'
-												onError={e => {
-													e.target.style.display = 'none'
-													e.target.nextSibling.style.display = 'block'
-												}}
-											/>
-											<div className='hidden'>
-												{i === 0 && (
-													<FaEthereum className='text-lg text-blue-600' />
-												)}
-												{i === 1 && (
-													<SiChainlink className='text-lg text-blue-500' />
-												)}
-												{i === 2 && (
-													<FaBitcoin className='text-lg text-orange-500' />
-												)}
-												{i === 3 && (
-													<SiSolana className='text-lg text-purple-500' />
-												)}
-											</div>
-										</div>
-										<h3 className='text-yellow-300 font-bold text-xs mb-2'>
+										<div className='mb-2'>{feature.icon}</div>
+										<h3 className='text-yellow-300 font-bold text-sm mb-1'>
 											{feature.title}
 										</h3>
-										<p className='text-white text-xs leading-tight'>
-											{feature.desc}
-										</p>
+										<p className='text-white/80 text-xs'>{feature.desc}</p>
 									</div>
 								))}
-							</div>
+							</motion.div>
+
+							<motion.div
+								className='flex gap-4 pt-4'
+								initial={{ opacity: 0, y: 30 }}
+								whileInView={{ opacity: 1, y: 0 }}
+								transition={{ duration: 0.8, delay: 0.6 }}
+								viewport={{ once: true }}
+							>
+								<Link
+									to='/whitepaper'
+									className='bg-gradient-to-r from-pink-500 to-orange-500 hover:from-pink-600 hover:to-orange-600 text-white px-8 py-4 rounded-xl font-bold text-lg shadow-2xl transform hover:scale-105 transition-all duration-300 border-2 border-white/20'
+								>
+									WHITEPAPER
+								</Link>
+								<a
+									href='#presale'
+									className='bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white px-8 py-4 rounded-xl font-bold text-lg shadow-2xl transform hover:scale-105 transition-all duration-300 border-2 border-white/20'
+								>
+									BUY NOW
+								</a>
+							</motion.div>
 						</div>
+
+						{/* Right Image */}
+						<motion.div
+							className='relative flex justify-center lg:justify-end'
+							initial={{ opacity: 0, x: 50 }}
+							whileInView={{ opacity: 1, x: 0 }}
+							transition={{ duration: 0.8, delay: 0.3 }}
+							viewport={{ once: true }}
+						>
+							<div className='relative'>
+								{/* Image with enhanced styling */}
+								<div className='relative rounded-3xl overflow-hidden border-4 border-white/30 shadow-2xl transform hover:scale-105 transition-all duration-500'>
+									<img
+										src={aboutDinoImg}
+										alt='About DINO Family'
+										className='w-full max-w-lg h-auto object-cover'
+									/>
+									{/* Overlay gradient */}
+									<div className='absolute inset-0 bg-gradient-to-t from-purple-600/20 via-transparent to-cyan-400/20'></div>
+								</div>
+
+								{/* Floating decorative elements around image */}
+								<motion.div
+									className='absolute -top-4 -left-4 w-12 h-12 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full flex items-center justify-center shadow-lg'
+									animate={{ y: [0, -10, 0], rotate: [0, 180, 360] }}
+									transition={{
+										repeat: Infinity,
+										duration: 4,
+										ease: 'easeInOut',
+									}}
+								>
+									<span className='text-white font-bold text-xl'>$</span>
+								</motion.div>
+
+								<motion.div
+									className='absolute -top-2 -right-6 w-8 h-8 bg-gradient-to-br from-pink-400 to-purple-500 rounded-full shadow-lg'
+									animate={{ y: [0, -8, 0], x: [0, 5, 0] }}
+									transition={{
+										repeat: Infinity,
+										duration: 3,
+										ease: 'easeInOut',
+										delay: 0.5,
+									}}
+								></motion.div>
+
+								<motion.div
+									className='absolute -bottom-6 -left-2 w-10 h-10 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-full flex items-center justify-center shadow-lg'
+									animate={{ y: [0, -12, 0], rotate: [0, -180, -360] }}
+									transition={{
+										repeat: Infinity,
+										duration: 5,
+										ease: 'easeInOut',
+										delay: 1,
+									}}
+								>
+									<span className='text-white font-bold'>🦕</span>
+								</motion.div>
+
+								<motion.div
+									className='absolute -bottom-2 -right-4 w-6 h-6 bg-gradient-to-br from-green-400 to-teal-500 rounded-full shadow-lg'
+									animate={{ y: [0, -6, 0], x: [0, -3, 0] }}
+									transition={{
+										repeat: Infinity,
+										duration: 2.5,
+										ease: 'easeInOut',
+										delay: 1.5,
+									}}
+								></motion.div>
+							</div>
+						</motion.div>
 					</div>
 				</section>
 
@@ -479,6 +695,15 @@ export default function Home() {
 					className='h-screen relative overflow-hidden bg-gradient-to-br from-purple-500 via-blue-500 to-teal-500'
 				>
 					<div className='absolute inset-0 bg-gradient-to-br from-purple-400/30 via-blue-400/30 to-teal-400/30'></div>
+
+					{/* Dino Lich GIF Background */}
+					<div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-5 opacity-20'>
+						<img
+							src={dinoLichGif}
+							alt='Dino Lich Background'
+							className='w-96 h-96 object-contain'
+						/>
+					</div>
 
 					{/* Floating space elements */}
 					<div className='absolute top-20 left-20 w-20 h-20 rounded-full bg-blue-200/30 animate-pulse'></div>
@@ -705,41 +930,49 @@ export default function Home() {
 									</h3>
 								</div>
 							</div>
+
+							{/* Dino Tokenomics GIF - Bottom Right */}
+							<motion.div
+								className='absolute -bottom-[350px] -right-[300px] z-20'
+								initial={{ opacity: 0, x: 200 }}
+								whileInView={{ opacity: 1, x: 0 }}
+								transition={{ duration: 1.2, ease: 'easeOut', delay: 1 }}
+								viewport={{ once: true }}
+							>
+								<img
+									src={dinoTokenomicsGif}
+									alt='Dino Tokenomics'
+									className='w-[450px] h-[450px] object-contain'
+								/>
+							</motion.div>
 						</div>
 					</div>
 				</section>
 
-				<section className='h-screen relative overflow-hidden bg-gradient-to-br from-yellow-400 via-orange-400 to-red-400'>
+				<section className='min-h-screen relative bg-gradient-to-br from-yellow-400 via-orange-400 to-red-400'>
 					<div className='absolute inset-0 bg-gradient-to-br from-yellow-300/30 via-orange-300/30 to-red-300/30'></div>
-					<div className='relative z-10 h-full flex flex-col justify-center items-center px-4'>
-						<h2 className='text-6xl font-nosifer text-center mb-12 text-green-400 drop-shadow-lg transform -rotate-3'>
+					<div className='relative z-10 min-h-screen max-w-7xl mx-auto px-4 py-16'>
+						{/* Header */}
+						<motion.h2
+							className='text-5xl lg:text-6xl font-nosifer text-green-400 drop-shadow-lg transform -rotate-3 text-center mb-12'
+							initial={{ opacity: 0, y: -30 }}
+							whileInView={{ opacity: 1, y: 0 }}
+							transition={{ duration: 0.8, ease: 'easeOut' }}
+							viewport={{ once: true }}
+						>
 							RoadMap
-						</h2>
+						</motion.h2>
 
-						{/* Center Character */}
-						<div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20'>
-							<div className='relative'>
-								<div className='w-32 h-32 rounded-full bg-green-400 border-4 border-white shadow-lg grid place-items-center animate-pulse overflow-hidden'>
-									<img
-										src='/src/assets/dino-standing.png'
-										alt='Roadmap Center Dino'
-										className='w-20 h-20 object-contain'
-										onError={e => {
-											e.target.style.display = 'none'
-											e.target.nextSibling.style.display = 'block'
-										}}
-									/>
-									<TbCurrencyDollar className='text-6xl text-white hidden' />
-								</div>
-								<div className='absolute -top-2 -right-2 w-8 h-8 bg-yellow-300 rounded-full animate-bounce'></div>
-								<div className='absolute -bottom-2 -left-2 w-6 h-6 bg-pink-300 rounded-full animate-bounce delay-100'></div>
-							</div>
-						</div>
-
-						{/* Phase Cards */}
-						<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 max-w-7xl w-full relative z-10'>
+						{/* Phase Cards Grid with Overflowing Video */}
+						<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 relative'>
 							{/* Phase 1 */}
-							<div className='bg-teal-500 rounded-2xl p-6 border-4 border-white shadow-2xl transform hover:scale-105 transition-transform'>
+							<motion.div
+								className='bg-teal-500 rounded-2xl p-6 border-4 border-white shadow-2xl transform hover:scale-105 transition-transform'
+								initial={{ opacity: 0, y: 30 }}
+								whileInView={{ opacity: 1, y: 0 }}
+								transition={{ duration: 0.6, delay: 0.1 }}
+								viewport={{ once: true }}
+							>
 								<div className='bg-pink-300 rounded-lg px-3 py-1 text-xs font-bold text-gray-800 mb-3 inline-block'>
 									PHASE 1
 								</div>
@@ -752,10 +985,16 @@ export default function Home() {
 									<li>• Appoint passionate community leaders</li>
 									<li>• Complete early presale stages</li>
 								</ul>
-							</div>
+							</motion.div>
 
 							{/* Phase 2 */}
-							<div className='bg-teal-500 rounded-2xl p-6 border-4 border-white shadow-2xl transform hover:scale-105 transition-transform'>
+							<motion.div
+								className='bg-teal-500 rounded-2xl p-6 border-4 border-white shadow-2xl transform hover:scale-105 transition-transform'
+								initial={{ opacity: 0, y: 30 }}
+								whileInView={{ opacity: 1, y: 0 }}
+								transition={{ duration: 0.6, delay: 0.2 }}
+								viewport={{ once: true }}
+							>
 								<div className='bg-pink-300 rounded-lg px-3 py-1 text-xs font-bold text-gray-800 mb-3 inline-block'>
 									PHASE 2
 								</div>
@@ -767,10 +1006,16 @@ export default function Home() {
 									<li>• Begin presale and onboard the early believers</li>
 									<li>• Kickstart marketing campaign</li>
 								</ul>
-							</div>
+							</motion.div>
 
 							{/* Phase 3 */}
-							<div className='bg-teal-500 rounded-2xl p-6 border-4 border-white shadow-2xl transform hover:scale-105 transition-transform'>
+							<motion.div
+								className='bg-teal-500 rounded-2xl p-6 border-4 border-white shadow-2xl transform hover:scale-105 transition-transform'
+								initial={{ opacity: 0, y: 30 }}
+								whileInView={{ opacity: 1, y: 0 }}
+								transition={{ duration: 0.6, delay: 0.3 }}
+								viewport={{ once: true }}
+							>
 								<div className='bg-pink-300 rounded-lg px-3 py-1 text-xs font-bold text-gray-800 mb-3 inline-block'>
 									PHASE 3
 								</div>
@@ -783,10 +1028,16 @@ export default function Home() {
 									<li>• Claim DINO's spot in the spotlight</li>
 									<li>• Finalize all preparations for token allocation</li>
 								</ul>
-							</div>
+							</motion.div>
 
 							{/* Phase 4 */}
-							<div className='bg-teal-500 rounded-2xl p-6 border-4 border-white shadow-2xl transform hover:scale-105 transition-transform'>
+							<motion.div
+								className='bg-teal-500 rounded-2xl p-6 border-4 border-white shadow-2xl transform hover:scale-105 transition-transform'
+								initial={{ opacity: 0, y: 30 }}
+								whileInView={{ opacity: 1, y: 0 }}
+								transition={{ duration: 0.6, delay: 0.4 }}
+								viewport={{ once: true }}
+							>
 								<div className='bg-pink-300 rounded-lg px-3 py-1 text-xs font-bold text-gray-800 mb-3 inline-block'>
 									PHASE 4
 								</div>
@@ -803,10 +1054,16 @@ export default function Home() {
 										• Partner with developers to expand the DINO ecosystem
 									</li>
 								</ul>
-							</div>
+							</motion.div>
 
 							{/* Phase 5 */}
-							<div className='bg-teal-500 rounded-2xl p-6 border-4 border-white shadow-2xl transform hover:scale-105 transition-transform'>
+							<motion.div
+								className='bg-teal-500 rounded-2xl p-6 border-4 border-white shadow-2xl transform hover:scale-105 transition-transform'
+								initial={{ opacity: 0, y: 30 }}
+								whileInView={{ opacity: 1, y: 0 }}
+								transition={{ duration: 0.6, delay: 0.5 }}
+								viewport={{ once: true }}
+							>
 								<div className='bg-pink-300 rounded-lg px-3 py-1 text-xs font-bold text-gray-800 mb-3 inline-block'>
 									PHASE 5
 								</div>
@@ -821,91 +1078,190 @@ export default function Home() {
 									<li>• Introduce community-driven governance</li>
 									<li>• Solidify DINO's position as the ultimate memecoin</li>
 								</ul>
-							</div>
-						</div>
+							</motion.div>
 
-						{/* Floating characters */}
-						<div className='absolute bottom-20 left-20 animate-bounce'>
-							<div className='w-16 h-16 rounded-full bg-pink-400 grid place-items-center overflow-hidden'>
-								<img
-									src='/src/assets/dino-cactus.png'
-									alt='Dino with Cactus'
-									className='w-12 h-12 object-contain'
-									onError={e => {
-										e.target.style.display = 'none'
-										e.target.nextSibling.style.display = 'block'
-									}}
-								/>
-								<SiCardano className='text-white text-2xl hidden' />
-							</div>
-						</div>
-						<div className='absolute top-20 right-20 animate-bounce delay-150'>
-							<div className='w-12 h-12 rounded-full bg-yellow-400 grid place-items-center overflow-hidden'>
-								<img
-									src='/src/assets/dino-desert.png'
-									alt='Desert Dino'
-									className='w-10 h-10 object-contain'
-									onError={e => {
-										e.target.style.display = 'none'
-										e.target.nextSibling.style.display = 'block'
-									}}
-								/>
-								<FaBitcoin className='text-orange-600 text-xl hidden' />
-							</div>
+							{/* Overflowing Video on Right */}
+							<motion.div
+								className='absolute -right-[100px] bottom-[-400px] w-80 h-full'
+								initial={{ opacity: 0, x: 100 }}
+								whileInView={{ opacity: 1, x: 0 }}
+								transition={{ duration: 0.8, delay: 0.6 }}
+								viewport={{ once: true }}
+							>
+								<div className='relative h-full'>
+									{/* Half-visible video that extends to bottom */}
+									<div className='absolute bottom-0 right-0 w-64 h-96 overflow-hidden transition-all duration-500'>
+										<img
+											src={dinosaurMapGif}
+											alt='Dinosaur Map Roadmap'
+											className='w-full h-full object-cover'
+										/>
+										{/* Overlay gradient */}
+									</div>
+
+									<motion.div
+										className='absolute top-8 right-2 w-8 h-8 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full shadow-lg'
+										animate={{ y: [0, -8, 0], x: [0, 5, 0] }}
+										transition={{
+											repeat: Infinity,
+											duration: 3,
+											ease: 'easeInOut',
+											delay: 0.5,
+										}}
+									></motion.div>
+
+									<motion.div
+										className='absolute bottom-20 left-2 w-10 h-10 bg-gradient-to-br from-red-400 to-pink-500 rounded-full flex items-center justify-center shadow-lg'
+										animate={{ y: [0, -12, 0], rotate: [0, -180, -360] }}
+										transition={{
+											repeat: Infinity,
+											duration: 5,
+											ease: 'easeInOut',
+											delay: 1,
+										}}
+									></motion.div>
+								</div>
+							</motion.div>
 						</div>
 					</div>
 				</section>
 
 				<section
 					id='faq'
-					className='h-screen relative overflow-hidden bg-[#fff]'
+					className='min-h-screen relative overflow-hidden bg-[#fff]'
 				>
-					<div className='relative z-20 h-full max-w-6xl mx-auto px-4 flex flex-col justify-center'>
-						<h2 className='text-6xl font-nosifer mb-12 text-center text-transparent bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text drop-shadow-lg transform rotate-1'>
-							FAQ
-						</h2>
-						<div className='space-y-6 max-w-4xl mx-auto'>
-							{[
-								{
-									q: 'What is $DINO?',
-									a: 'A community-driven meme token built on Ethereum that combines fun with serious blockchain innovation. Join the dino family today!',
-								},
-								{
-									q: 'Which blockchain?',
-									a: 'DINO is built on Ethereum mainnet, leveraging the security and reliability of the most trusted blockchain network.',
-								},
-								{
-									q: 'How to buy $DINO?',
-									a: 'Connect your MetaMask wallet, choose ETH or USDT, enter your amount, and click Buy. You can also stake for additional rewards!',
-								},
-								{
-									q: 'What are the tokenomics?',
-									a: 'Total supply is distributed across presale, staking rewards, development, marketing, and community initiatives. Check our tokenomics section above.',
-								},
-								{
-									q: 'Is there staking?',
-									a: 'Yes! Stake your $DINO tokens and earn up to 913.17% APY rewards. The longer you stake, the more you earn!',
-								},
-							].map((f, i) => (
-								<div
-									key={i}
-									className='faq-item bg-gradient-to-r from-emerald-400 to-teal-500 rounded-2xl border-2 border-emerald-600 shadow-xl overflow-hidden'
-								>
-									<details className='group'>
-										<summary className='cursor-pointer p-6 font-bold text-xl text-white hover:bg-white/10 transition-all duration-300 list-none flex justify-between items-center'>
-											<span>{f.q}</span>
-											<span className='transform group-open:rotate-180 transition-transform duration-500 text-2xl'>
-												⚡
-											</span>
-										</summary>
-										<div className='accordion-content px-6 pb-6 transition-all duration-500 ease-in-out max-h-0 group-open:max-h-96 overflow-hidden'>
-											<div className='pt-4'>
-												<p className='text-white leading-relaxed'>{f.a}</p>
-											</div>
-										</div>
-									</details>
+					<div className='relative z-20 min-h-screen max-w-7xl mx-auto px-4 py-16 grid lg:grid-cols-2 gap-12 items-center'>
+						{/* Left GIF */}
+						<motion.div
+							className='relative flex justify-center lg:justify-start'
+							initial={{ opacity: 0, x: -50 }}
+							whileInView={{ opacity: 1, x: 0 }}
+							transition={{ duration: 0.8, delay: 0.3 }}
+							viewport={{ once: true }}
+						>
+							<div className='relative'>
+								{/* GIF with enhanced styling */}
+								<div className='relative rounded-3xl overflow-hidden border-4 border-emerald-500/50 shadow-2xl transform hover:scale-105 transition-all duration-500'>
+									<img
+										src={dinosaurKaktusGif}
+										alt='Dinosaur Kaktus FAQ'
+										className='w-full max-w-lg h-auto object-cover'
+									/>
+									{/* Overlay gradient */}
+									<div className='absolute inset-0 bg-gradient-to-t from-emerald-600/20 via-transparent to-teal-400/20'></div>
 								</div>
-							))}
+
+								{/* Floating decorative elements around GIF */}
+								<motion.div
+									className='absolute -top-4 -right-4 w-12 h-12 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-full flex items-center justify-center shadow-lg'
+									animate={{ y: [0, -10, 0], rotate: [0, 180, 360] }}
+									transition={{
+										repeat: Infinity,
+										duration: 4,
+										ease: 'easeInOut',
+									}}
+								>
+									<span className='text-white font-bold text-xl'>🌵</span>
+								</motion.div>
+
+								<motion.div
+									className='absolute -top-2 -left-6 w-8 h-8 bg-gradient-to-br from-teal-400 to-emerald-500 rounded-full shadow-lg'
+									animate={{ y: [0, -8, 0], x: [0, -5, 0] }}
+									transition={{
+										repeat: Infinity,
+										duration: 3,
+										ease: 'easeInOut',
+										delay: 0.5,
+									}}
+								></motion.div>
+
+								<motion.div
+									className='absolute -bottom-6 -right-2 w-10 h-10 bg-gradient-to-br from-green-400 to-emerald-500 rounded-full flex items-center justify-center shadow-lg'
+									animate={{ y: [0, -12, 0], rotate: [0, -180, -360] }}
+									transition={{
+										repeat: Infinity,
+										duration: 5,
+										ease: 'easeInOut',
+										delay: 1,
+									}}
+								>
+									<span className='text-white font-bold'>❓</span>
+								</motion.div>
+
+								<motion.div
+									className='absolute -bottom-2 -left-4 w-6 h-6 bg-gradient-to-br from-emerald-400 to-green-500 rounded-full shadow-lg'
+									animate={{ y: [0, -6, 0], x: [0, 3, 0] }}
+									transition={{
+										repeat: Infinity,
+										duration: 2.5,
+										ease: 'easeInOut',
+										delay: 1.5,
+									}}
+								></motion.div>
+							</div>
+						</motion.div>
+
+						{/* Right Content - FAQ */}
+						<div className='space-y-8'>
+							<motion.h2
+								className='text-5xl lg:text-6xl font-nosifer text-transparent bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text drop-shadow-lg transform rotate-1'
+								initial={{ opacity: 0, y: -30 }}
+								whileInView={{ opacity: 1, y: 0 }}
+								transition={{ duration: 0.8, ease: 'easeOut' }}
+								viewport={{ once: true }}
+							>
+								FAQ
+							</motion.h2>
+
+							<motion.div
+								className='space-y-6'
+								initial={{ opacity: 0, y: 30 }}
+								whileInView={{ opacity: 1, y: 0 }}
+								transition={{ duration: 0.8, delay: 0.2 }}
+								viewport={{ once: true }}
+							>
+								{[
+									{
+										q: 'What is $DINO?',
+										a: 'A community-driven meme token built on Ethereum that combines fun with serious blockchain innovation. Join the dino family today!',
+									},
+									{
+										q: 'Which blockchain?',
+										a: 'DINO is built on Ethereum mainnet, leveraging the security and reliability of the most trusted blockchain network.',
+									},
+									{
+										q: 'How to buy $DINO?',
+										a: 'Connect your MetaMask wallet, choose ETH or USDT, enter your amount, and click Buy. You can also stake for additional rewards!',
+									},
+									{
+										q: 'What are the tokenomics?',
+										a: 'Total supply is distributed across presale, staking rewards, development, marketing, and community initiatives. Check our tokenomics section above.',
+									},
+									{
+										q: 'Is there staking?',
+										a: 'Yes! Stake your $DINO tokens and earn up to 913.17% APY rewards. The longer you stake, the more you earn!',
+									},
+								].map((f, i) => (
+									<div
+										key={i}
+										className='faq-item bg-gradient-to-r from-emerald-400 to-teal-500 rounded-2xl border-2 border-emerald-600 shadow-xl overflow-hidden'
+									>
+										<details className='group'>
+											<summary className='cursor-pointer p-6 font-bold text-xl text-white hover:bg-white/10 transition-all duration-300 list-none flex justify-between items-center'>
+												<span>{f.q}</span>
+												<span className='transform group-open:rotate-180 transition-transform duration-500 text-2xl'>
+													⚡
+												</span>
+											</summary>
+											<div className='accordion-content px-6 pb-6 transition-all duration-500 ease-in-out max-h-0 group-open:max-h-96 overflow-hidden'>
+												<div className='pt-4'>
+													<p className='text-white leading-relaxed'>{f.a}</p>
+												</div>
+											</div>
+										</details>
+									</div>
+								))}
+							</motion.div>
 						</div>
 					</div>
 				</section>
