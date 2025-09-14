@@ -26,7 +26,7 @@ export default function Header() {
 
 	return (
 		<header
-			className={`fixed top-[20px] left-0 right-0 max-w-6xl mx-auto z-50 transition-all duration-500 border-2 rounded-[20px] ${
+			className={`fixed top-[20px] left-0 right-0 max-[768px]:left-[10px] max-[768px]:right-[10px] max-w-6xl mx-auto z-50 transition-all duration-500 border-2 rounded-[20px] ${
 				isDarkHeader
 					? 'bg-black/90 backdrop-blur-md border-white/20'
 					: 'bg-white/80 backdrop-blur-md border-black/100'
@@ -118,9 +118,7 @@ export default function Header() {
 			{mobileMenuOpen && (
 				<div
 					className={`md:hidden border-t transition-all duration-500 ${
-						isDarkHeader
-							? 'border-white/20 bg-black/90'
-							: 'border-black/10 bg-white'
+						isDarkHeader ? 'border-white/20 bg-black/90' : 'border-black/10'
 					}`}
 				>
 					<nav

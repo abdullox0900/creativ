@@ -7,6 +7,7 @@ import { SiDogecoin, SiSolana } from 'react-icons/si'
 import { TbCurrencyDollar } from 'react-icons/tb'
 import { Link } from 'react-router-dom'
 import aboutDinoImg from '../assets/about-dino-img.png'
+import dino2Img from '../assets/dino-2.png'
 import dinoImg from '../assets/dino-img.png'
 import dinoLichGif from '../assets/video/dino-lich.gif'
 import dinoTokenomicsGif from '../assets/video/dino-tokenomics.gif'
@@ -117,7 +118,7 @@ export default function Home() {
 			<ProgressLine />
 			<Header />
 			<main ref={mainRef}>
-				<section className='relative h-screen max-w-6xl mx-auto px-4 pt-16 grid md:grid-cols-2 gap-10 items-center overflow-hidden'>
+				<section className='relative lg:min-h-screen max-w-7xl mx-auto px-3 sm:px-4 lg:px-6 pt-16 sm:pt-20 lg:pt-16 pb-8 lg:pb-0 flex flex-col lg:grid lg:grid-cols-2 gap-8 lg:gap-12 lg:items-center overflow-hidden'>
 					<HeroLines />
 
 					{/* Animated Cartoon Background Elements */}
@@ -390,12 +391,23 @@ export default function Home() {
 						/>
 					</div>
 
-					<div className='space-y-6'>
-						<h1 className='text-[26px] font-nosifer leading-tight text-transparent bg-gradient-to-r from-pink-400 to-cyan-400 bg-clip-text'>
+					{/* Content Section */}
+					<div className='lg:order-1 space-y-6 text-center lg:text-left'>
+						<h1 className='text-lg sm:text-xl lg:text-[26px] font-nosifer leading-tight text-transparent bg-gradient-to-r from-pink-400 to-cyan-400 bg-clip-text mt-8 sm:mt-12'>
 							WELCOME TO $DINO TOKEN PRESALE
 						</h1>
-						<img src={dinoImg} alt='' className='w-[450px] h-[400px]' />
-						<div className='flex gap-3'>
+						<div className='flex justify-center lg:justify-start'>
+							<img
+								src={dinoImg}
+								alt='DINO Token'
+								className='w-full max-w-[280px] sm:max-w-[320px] lg:max-w-[450px] h-auto object-contain'
+							/>
+						</div>
+						<p className='text-neutral-600 text-sm lg:text-base max-w-prose font-roboto mx-auto lg:mx-0'>
+							Legendary meme vibes meet clean design. Jump in early and ride
+							with the Dino family.
+						</p>
+						<div className='flex flex-col sm:flex-row gap-3 justify-center lg:justify-start'>
 							<a
 								href='#presale'
 								className='px-5 py-3 rounded-lg bg-gradient-to-r from-pink-500 to-purple-600 text-white font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all'
@@ -410,10 +422,11 @@ export default function Home() {
 							</Link>
 						</div>
 					</div>
-					<div className='relative max-w-sm ml-auto'>
+					{/* Calculator Section */}
+					<div className='lg:order-2 relative flex justify-center lg:justify-end w-full'>
 						<div
 							id='presale'
-							className='bg-white rounded-xl border border-black/10 p-4 pt-6 shadow-xl'
+							className='bg-white rounded-xl border border-black/10 p-4 shadow-xl w-full max-w-sm'
 						>
 							{/* Price Header */}
 							<div className='flex justify-between items-center mb-3'>
@@ -532,7 +545,7 @@ export default function Home() {
 						{/* Left Content */}
 						<div className='space-y-8'>
 							<motion.h2
-								className='text-5xl lg:text-6xl font-nosifer text-transparent bg-gradient-to-r from-yellow-300 via-orange-300 to-pink-300 bg-clip-text drop-shadow-2xl'
+								className='text-3xl sm:text-4xl lg:text-5xl font-nosifer text-transparent bg-gradient-to-r from-yellow-300 via-orange-300 to-pink-300 bg-clip-text drop-shadow-2xl'
 								initial={{ opacity: 0, x: -50 }}
 								whileInView={{ opacity: 1, x: 0 }}
 								transition={{ duration: 0.8, ease: 'easeOut' }}
@@ -542,7 +555,7 @@ export default function Home() {
 							</motion.h2>
 
 							<motion.p
-								className='text-white text-xl font-roboto leading-relaxed max-w-2xl backdrop-blur-sm bg-white/10 p-6 rounded-2xl border border-white/20'
+								className='text-white text-base sm:text-lg font-roboto leading-relaxed max-w-2xl backdrop-blur-sm bg-white/10 p-4 sm:p-6 rounded-2xl border border-white/20'
 								initial={{ opacity: 0, y: 30 }}
 								whileInView={{ opacity: 1, y: 0 }}
 								transition={{ duration: 0.8, delay: 0.2 }}
@@ -605,13 +618,13 @@ export default function Home() {
 							>
 								<Link
 									to='/whitepaper'
-									className='bg-gradient-to-r from-pink-500 to-orange-500 hover:from-pink-600 hover:to-orange-600 text-white px-8 py-4 rounded-xl font-bold text-lg shadow-2xl transform hover:scale-105 transition-all duration-300 border-2 border-white/20'
+									className='max-[768px]:px-2 max-[768px]:py-2 bg-gradient-to-r from-pink-500 to-orange-500 hover:from-pink-600 hover:to-orange-600 text-white px-8 py-4 rounded-xl font-bold text-lg shadow-2xl transform hover:scale-105 transition-all duration-300 border-2 border-white/20'
 								>
 									WHITEPAPER
 								</Link>
 								<a
 									href='#presale'
-									className='bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white px-8 py-4 rounded-xl font-bold text-lg shadow-2xl transform hover:scale-105 transition-all duration-300 border-2 border-white/20'
+									className='max-[768px]:px-2 max-[768px]:py-2 bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white px-8 py-4 rounded-xl font-bold text-lg shadow-2xl transform hover:scale-105 transition-all duration-300 border-2 border-white/20'
 								>
 									BUY NOW
 								</a>
@@ -692,7 +705,7 @@ export default function Home() {
 
 				<section
 					id='how-to-buy'
-					className='h-screen relative overflow-hidden bg-gradient-to-br from-purple-500 via-blue-500 to-teal-500'
+					className='h-screen relative flex justify-center items-center max-[768px]:h-auto max-[768px]:py-16 bg-gradient-to-br from-purple-500 via-blue-500 to-teal-500'
 				>
 					<div className='absolute inset-0 bg-gradient-to-br from-purple-400/30 via-blue-400/30 to-teal-400/30'></div>
 
@@ -710,8 +723,8 @@ export default function Home() {
 					<div className='absolute bottom-40 right-20 w-32 h-32 rounded-full bg-purple-200/20 animate-pulse delay-100'></div>
 					<div className='absolute top-1/3 right-1/4 w-16 h-16 rounded-full bg-pink-200/40 animate-bounce'></div>
 
-					<div className='relative z-10 h-full flex flex-col justify-center items-center px-4'>
-						<h2 className='text-6xl font-nosifer text-center mb-12 text-yellow-300 drop-shadow-lg transform rotate-2'>
+					<div className='relative z-10 flex flex-col justify-center items-center px-4'>
+						<h2 className='text-4xl lg:text-5xl font-nosifer text-center mb-12 text-yellow-300 drop-shadow-lg transform rotate-2'>
 							how to buy
 						</h2>
 
@@ -801,139 +814,169 @@ export default function Home() {
 					</div>
 				</section>
 
-				<section className='h-screen relative overflow-hidden bg-gradient-to-br from-blue-600 via-teal-500 to-cyan-400'>
-					<div className='absolute inset-0 bg-gradient-to-br from-blue-500/30 via-teal-400/30 to-cyan-300/30'></div>
+				<section className='min-h-screen relative overflow-hidden bg-gradient-to-r from-cyan-400 via-teal-400 to-cyan-500'>
+					<div className='absolute inset-0 bg-gradient-to-r from-cyan-300/20 via-teal-300/20 to-cyan-400/20'></div>
 
-					{/* Floating elements */}
-					<div className='absolute top-20 right-20 w-16 h-16 rounded-full bg-pink-300/40 animate-bounce'></div>
-					<div className='absolute bottom-40 left-20 w-24 h-24 rounded-full bg-yellow-300/40 animate-pulse'></div>
+					{/* Floating Dollar Icon */}
+					<div className='absolute top-20 right-1/4 w-20 h-20 rounded-full bg-gradient-to-br from-green-400 to-emerald-500 shadow-2xl flex items-center justify-center animate-bounce border-4 border-white'>
+						<TbCurrencyDollar className='text-3xl text-white' />
+						<div className='absolute -top-2 -right-2 w-6 h-6 bg-pink-400 rounded-full animate-ping'></div>
+					</div>
 
-					<div className='relative z-10 h-full max-w-6xl mx-auto px-4 flex flex-col justify-center'>
-						<div className='text-center mb-8'>
-							<h2 className='text-6xl font-nosifer text-yellow-300 drop-shadow-lg transform -rotate-2 mb-4'>
-								toKeNoMiCs
-							</h2>
-							{/* Center Character */}
-							<div className='flex justify-center'>
-								<div className='relative'>
-									<div className='w-24 h-24 rounded-full bg-green-400 border-4 border-white shadow-lg grid place-items-center animate-bounce overflow-hidden'>
-										<img
-											src='/src/assets/dino-happy.png'
-											alt='Tokenomics Center Dino'
-											className='w-16 h-16 object-contain'
-											onError={e => {
-												e.target.style.display = 'none'
-												e.target.nextSibling.style.display = 'block'
-											}}
-										/>
-										<TbCurrencyDollar className='text-5xl text-white hidden' />
+					<div className='relative z-10 min-h-screen max-w-7xl mx-auto px-4 py-16 flex flex-col justify-center'>
+						<motion.h2
+							className='text-4xl lg:text-5xl font-nosifer text-white drop-shadow-lg text-center mb-16'
+							initial={{ opacity: 0, y: -30 }}
+							whileInView={{ opacity: 1, y: 0 }}
+							transition={{ duration: 0.8, ease: 'easeOut' }}
+							viewport={{ once: true }}
+						>
+							toKeNoMiCs
+						</motion.h2>
+
+						{/* Grid Layout */}
+						<div className='relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 max-w-6xl mx-auto'>
+							{/* Presale - 45.5% */}
+							<motion.div
+								className='tokenomics-card'
+								initial={{ opacity: 0, y: 50 }}
+								whileInView={{ opacity: 1, y: 0 }}
+								transition={{ duration: 0.6, delay: 0.1 }}
+								viewport={{ once: true }}
+							>
+								<div className='bg-white rounded-2xl p-4 lg:p-6 border-4 border-teal-500 shadow-2xl h-full'>
+									<div className='bg-pink-400 rounded-lg px-3 py-2 text-sm font-bold text-white mb-3 inline-block'>
+										45.5%
 									</div>
-									<div className='absolute -top-2 -right-2 w-6 h-6 bg-pink-300 rounded-full animate-ping'></div>
+									<h3 className='text-teal-600 font-bold text-lg'>Presale</h3>
 								</div>
-							</div>
-						</div>
+							</motion.div>
 
-						{/* Tokenomics Cards arranged around center */}
-						<div className='relative'>
-							{/* Distribution percentages around the character */}
-							<div className='tokenomics-card absolute -top-20 left-1/4 transform -translate-x-1/2'>
-								<div className='bg-teal-500 rounded-2xl p-4 border-4 border-white shadow-2xl'>
-									<div className='bg-pink-300 rounded-lg px-2 py-1 text-xs font-bold text-gray-800 mb-2 inline-block'>
-										30%
-									</div>
-									<h3 className='text-yellow-300 font-bold text-sm'>Presale</h3>
-								</div>
-							</div>
-
-							<div className='tokenomics-card absolute -top-20 right-1/4 transform translate-x-1/2'>
-								<div className='bg-teal-500 rounded-2xl p-4 border-4 border-white shadow-2xl'>
-									<div className='bg-pink-300 rounded-lg px-2 py-1 text-xs font-bold text-gray-800 mb-2 inline-block'>
-										10%
-									</div>
-									<h3 className='text-yellow-300 font-bold text-sm'>
-										Exchange Listings
-									</h3>
-								</div>
-							</div>
-
-							<div className='tokenomics-card absolute left-0 top-1/2 transform -translate-y-1/2'>
-								<div className='bg-teal-500 rounded-2xl p-4 border-4 border-white shadow-2xl'>
-									<div className='bg-pink-300 rounded-lg px-2 py-1 text-xs font-bold text-gray-800 mb-2 inline-block'>
+							{/* Staking - 25% */}
+							<motion.div
+								className='tokenomics-card'
+								initial={{ opacity: 0, y: 50 }}
+								whileInView={{ opacity: 1, y: 0 }}
+								transition={{ duration: 0.6, delay: 0.2 }}
+								viewport={{ once: true }}
+							>
+								<div className='bg-white rounded-2xl p-4 lg:p-6 border-4 border-teal-500 shadow-2xl h-full'>
+									<div className='bg-pink-400 rounded-lg px-3 py-2 text-sm font-bold text-white mb-3 inline-block'>
 										25%
 									</div>
-									<h3 className='text-yellow-300 font-bold text-sm'>
-										Staking Rewards
-									</h3>
+									<h3 className='text-teal-600 font-bold text-lg'>Staking</h3>
 								</div>
-							</div>
+							</motion.div>
 
-							<div className='tokenomics-card absolute right-0 top-1/2 transform -translate-y-1/2'>
-								<div className='bg-teal-500 rounded-2xl p-4 border-4 border-white shadow-2xl'>
-									<div className='bg-pink-300 rounded-lg px-2 py-1 text-xs font-bold text-gray-800 mb-2 inline-block'>
-										8%
-									</div>
-									<h3 className='text-yellow-300 font-bold text-sm'>
-										Marketing
-									</h3>
-								</div>
-							</div>
-
-							<div className='tokenomics-card absolute bottom-0 left-1/3 transform -translate-x-1/2'>
-								<div className='bg-teal-500 rounded-2xl p-4 border-4 border-white shadow-2xl'>
-									<div className='bg-pink-300 rounded-lg px-2 py-1 text-xs font-bold text-gray-800 mb-2 inline-block'>
+							{/* Ecosystem Development - 15% */}
+							<motion.div
+								className='tokenomics-card'
+								initial={{ opacity: 0, y: 50 }}
+								whileInView={{ opacity: 1, y: 0 }}
+								transition={{ duration: 0.6, delay: 0.3 }}
+								viewport={{ once: true }}
+							>
+								<div className='bg-white rounded-2xl p-4 lg:p-6 border-4 border-teal-500 shadow-2xl h-full'>
+									<div className='bg-pink-400 rounded-lg px-3 py-2 text-sm font-bold text-white mb-3 inline-block'>
 										15%
 									</div>
-									<h3 className='text-yellow-300 font-bold text-sm'>
+									<h3 className='text-teal-600 font-bold text-lg'>
 										Ecosystem Development
 									</h3>
 								</div>
-							</div>
+							</motion.div>
 
-							<div className='tokenomics-card absolute bottom-0 right-1/3 transform translate-x-1/2'>
-								<div className='bg-teal-500 rounded-2xl p-4 border-4 border-white shadow-2xl'>
-									<div className='bg-pink-300 rounded-lg px-2 py-1 text-xs font-bold text-gray-800 mb-2 inline-block'>
-										2.5%
+							{/* Marketing - 8% */}
+							<motion.div
+								className='tokenomics-card'
+								initial={{ opacity: 0, y: 50 }}
+								whileInView={{ opacity: 1, y: 0 }}
+								transition={{ duration: 0.6, delay: 0.4 }}
+								viewport={{ once: true }}
+							>
+								<div className='bg-white rounded-2xl p-4 lg:p-6 border-4 border-teal-500 shadow-2xl h-full'>
+									<div className='bg-pink-400 rounded-lg px-3 py-2 text-sm font-bold text-white mb-3 inline-block'>
+										8%
 									</div>
-									<h3 className='text-yellow-300 font-bold text-sm'>Team</h3>
+									<h3 className='text-teal-600 font-bold text-lg'>Marketing</h3>
 								</div>
-							</div>
+							</motion.div>
 
-							<div className='tokenomics-card absolute -bottom-10 left-1/2 transform -translate-x-1/2'>
-								<div className='bg-teal-500 rounded-2xl p-4 border-4 border-white shadow-2xl'>
-									<div className='bg-pink-300 rounded-lg px-2 py-1 text-xs font-bold text-gray-800 mb-2 inline-block'>
-										1%
-									</div>
-									<h3 className='text-yellow-300 font-bold text-sm'>
-										Charity/Impact
-									</h3>
-								</div>
-							</div>
-
-							<div className='tokenomics-card absolute -bottom-20 left-20'>
-								<div className='bg-teal-500 rounded-2xl p-4 border-4 border-white shadow-2xl'>
-									<div className='bg-pink-300 rounded-lg px-2 py-1 text-xs font-bold text-gray-800 mb-2 inline-block'>
-										3.5%
-									</div>
-									<h3 className='text-yellow-300 font-bold text-sm'>
-										Community Rewards
-									</h3>
-								</div>
-							</div>
-
-							<div className='tokenomics-card absolute -bottom-20 right-20'>
-								<div className='bg-teal-500 rounded-2xl p-4 border-4 border-white shadow-2xl'>
-									<div className='bg-pink-300 rounded-lg px-2 py-1 text-xs font-bold text-gray-800 mb-2 inline-block'>
+							{/* Foundation/Reserve - 5% */}
+							<motion.div
+								className='tokenomics-card'
+								initial={{ opacity: 0, y: 50 }}
+								whileInView={{ opacity: 1, y: 0 }}
+								transition={{ duration: 0.6, delay: 0.5 }}
+								viewport={{ once: true }}
+							>
+								<div className='bg-white rounded-2xl p-4 lg:p-6 border-4 border-teal-500 shadow-2xl h-full'>
+									<div className='bg-pink-400 rounded-lg px-3 py-2 text-sm font-bold text-white mb-3 inline-block'>
 										5%
 									</div>
-									<h3 className='text-yellow-300 font-bold text-sm'>
+									<h3 className='text-teal-600 font-bold text-lg'>
 										Foundation/Reserve
 									</h3>
 								</div>
-							</div>
+							</motion.div>
+
+							{/* Community Rewards - 3.5% */}
+							<motion.div
+								className='tokenomics-card'
+								initial={{ opacity: 0, y: 50 }}
+								whileInView={{ opacity: 1, y: 0 }}
+								transition={{ duration: 0.6, delay: 0.6 }}
+								viewport={{ once: true }}
+							>
+								<div className='bg-white rounded-2xl p-4 lg:p-6 border-4 border-teal-500 shadow-2xl h-full'>
+									<div className='bg-pink-400 rounded-lg px-3 py-2 text-sm font-bold text-white mb-3 inline-block'>
+										3.5%
+									</div>
+									<h3 className='text-teal-600 font-bold text-lg'>
+										Community Rewards
+									</h3>
+								</div>
+							</motion.div>
+
+							{/* Exchange Listings - 2.5% */}
+							<motion.div
+								className='tokenomics-card'
+								initial={{ opacity: 0, y: 50 }}
+								whileInView={{ opacity: 1, y: 0 }}
+								transition={{ duration: 0.6, delay: 0.7 }}
+								viewport={{ once: true }}
+							>
+								<div className='bg-white rounded-2xl p-4 lg:p-6 border-4 border-teal-500 shadow-2xl h-full'>
+									<div className='bg-pink-400 rounded-lg px-3 py-2 text-sm font-bold text-white mb-3 inline-block'>
+										2.5%
+									</div>
+									<h3 className='text-teal-600 font-bold text-lg'>
+										Exchange Listings
+									</h3>
+								</div>
+							</motion.div>
+
+							{/* Charity/Impact - 1% */}
+							<motion.div
+								className='tokenomics-card'
+								initial={{ opacity: 0, y: 50 }}
+								whileInView={{ opacity: 1, y: 0 }}
+								transition={{ duration: 0.6, delay: 0.8 }}
+								viewport={{ once: true }}
+							>
+								<div className='bg-white rounded-2xl p-4 lg:p-6 border-4 border-teal-500 shadow-2xl h-full'>
+									<div className='bg-pink-400 rounded-lg px-3 py-2 text-sm font-bold text-white mb-3 inline-block'>
+										1%
+									</div>
+									<h3 className='text-teal-600 font-bold text-lg'>
+										Charity/Impact
+									</h3>
+								</div>
+							</motion.div>
 
 							{/* Dino Tokenomics GIF - Bottom Right */}
 							<motion.div
-								className='absolute -bottom-[350px] -right-[300px] z-20'
+								className='absolute -bottom-16 -right-8 z-20'
 								initial={{ opacity: 0, x: 200 }}
 								whileInView={{ opacity: 1, x: 0 }}
 								transition={{ duration: 1.2, ease: 'easeOut', delay: 1 }}
@@ -942,7 +985,7 @@ export default function Home() {
 								<img
 									src={dinoTokenomicsGif}
 									alt='Dino Tokenomics'
-									className='w-[450px] h-[450px] object-contain'
+									className='w-48 h-48 object-contain'
 								/>
 							</motion.div>
 						</div>
@@ -954,7 +997,7 @@ export default function Home() {
 					<div className='relative z-10 min-h-screen max-w-7xl mx-auto px-4 py-16'>
 						{/* Header */}
 						<motion.h2
-							className='text-5xl lg:text-6xl font-nosifer text-green-400 drop-shadow-lg transform -rotate-3 text-center mb-12'
+							className='text-4xl lg:text-5xl font-nosifer text-green-400 drop-shadow-lg transform -rotate-3 text-center mb-12'
 							initial={{ opacity: 0, y: -30 }}
 							whileInView={{ opacity: 1, y: 0 }}
 							transition={{ duration: 0.8, ease: 'easeOut' }}
@@ -1126,6 +1169,126 @@ export default function Home() {
 					</div>
 				</section>
 
+				{/* Play Now Section */}
+				<section
+					id='play-now'
+					className='min-h-screen relative overflow-hidden bg-white'
+				>
+					<div className='relative z-20 min-h-screen max-w-7xl mx-auto px-4 py-16 grid lg:grid-cols-2 gap-12 items-center'>
+						{/* Right Image */}
+						<motion.div
+							className='relative flex justify-center lg:justify-end order-2 lg:order-2'
+							initial={{ opacity: 0, x: 50 }}
+							whileInView={{ opacity: 1, x: 0 }}
+							transition={{ duration: 0.8, delay: 0.3 }}
+							viewport={{ once: true }}
+						>
+							<div className='relative'>
+								{/* Image with enhanced styling */}
+								<div className='relative rounded-3xl overflow-hidden border-4 border-cyan-500/50 shadow-2xl transform hover:scale-105 transition-all duration-500'>
+									<img
+										src={dino2Img}
+										alt='Dino Game Character'
+										className='w-full max-w-lg h-auto object-cover'
+									/>
+									{/* Overlay gradient */}
+									<div className='absolute inset-0 bg-gradient-to-t from-cyan-600/20 via-transparent to-blue-400/20'></div>
+								</div>
+
+								{/* Floating decorative elements around Image */}
+								<motion.div
+									className='absolute -top-4 -right-4 w-12 h-12 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-full flex items-center justify-center shadow-lg'
+									animate={{ y: [0, -10, 0], rotate: [0, 180, 360] }}
+									transition={{
+										repeat: Infinity,
+										duration: 4,
+										ease: 'easeInOut',
+									}}
+								>
+									<span className='text-white text-xl'>🎮</span>
+								</motion.div>
+
+								<motion.div
+									className='absolute -bottom-4 -left-4 w-10 h-10 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full flex items-center justify-center shadow-lg'
+									animate={{ y: [0, -8, 0], rotate: [0, -180, -360] }}
+									transition={{
+										repeat: Infinity,
+										duration: 3.5,
+										ease: 'easeInOut',
+										delay: 0.5,
+									}}
+								>
+									<span className='text-white text-sm'>🚀</span>
+								</motion.div>
+
+								<motion.div
+									className='absolute top-1/2 -left-6 w-8 h-8 bg-gradient-to-br from-green-400 to-cyan-500 rounded-full flex items-center justify-center shadow-lg'
+									animate={{ x: [0, -8, 0], rotate: [0, 90, 180] }}
+									transition={{
+										repeat: Infinity,
+										duration: 4.5,
+										ease: 'easeInOut',
+										delay: 1,
+									}}
+								>
+									<span className='text-white text-xs'>⭐</span>
+								</motion.div>
+							</div>
+						</motion.div>
+
+						{/* Left Content - Play Now */}
+						<div className='space-y-8 px-4 md:px-0 order-1 lg:order-1'>
+							<motion.h2
+								className='text-3xl md:text-4xl lg:text-5xl font-nosifer text-transparent bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text drop-shadow-lg transform rotate-1'
+								initial={{ opacity: 0, y: -30 }}
+								whileInView={{ opacity: 1, y: 0 }}
+								transition={{ duration: 0.8, ease: 'easeOut' }}
+								viewport={{ once: true }}
+							>
+								PLAY NOW
+							</motion.h2>
+
+							<motion.div
+								className='space-y-6'
+								initial={{ opacity: 0, y: 30 }}
+								whileInView={{ opacity: 1, y: 0 }}
+								transition={{ duration: 0.8, delay: 0.2 }}
+								viewport={{ once: true }}
+							>
+								<div className='bg-gradient-to-r from-cyan-50 to-blue-50 rounded-2xl p-6 md:p-8 shadow-lg border border-cyan-200'>
+									<h3 className='text-xl md:text-2xl font-bold text-gray-800 mb-4'>
+										🎮 Start Your Adventure
+									</h3>
+									<p className='text-gray-700 text-sm md:text-base leading-relaxed mb-6'>
+										Join the DINO ecosystem and experience the next generation
+										of blockchain gaming. Collect, trade, and battle with your
+										unique dinosaur characters in an immersive metaverse.
+									</p>
+									<div className='flex flex-col sm:flex-row gap-4'>
+										<button className='bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white px-6 py-3 rounded-xl font-bold text-sm md:text-base shadow-xl transform hover:scale-105 transition-all duration-300 border-2 border-white/20'>
+											PLAY GAME
+										</button>
+										<button className='bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white px-6 py-3 rounded-xl font-bold text-sm md:text-base shadow-xl transform hover:scale-105 transition-all duration-300 border-2 border-white/20'>
+											JOIN COMMUNITY
+										</button>
+									</div>
+								</div>
+
+								<div className='bg-gradient-to-r from-green-50 to-cyan-50 rounded-2xl p-6 md:p-8 shadow-lg border border-green-200'>
+									<h3 className='text-xl md:text-2xl font-bold text-gray-800 mb-4'>
+										🏆 Earn Rewards
+									</h3>
+									<p className='text-gray-700 text-sm md:text-base leading-relaxed'>
+										Complete quests, win battles, and earn $DINO tokens. The
+										more you play, the more you earn. Stake your tokens for
+										additional passive income and exclusive rewards.
+									</p>
+								</div>
+							</motion.div>
+						</div>
+					</div>
+				</section>
+
 				<section
 					id='faq'
 					className='min-h-screen relative overflow-hidden bg-[#fff]'
@@ -1202,9 +1365,9 @@ export default function Home() {
 						</motion.div>
 
 						{/* Right Content - FAQ */}
-						<div className='space-y-8'>
+						<div className='space-y-8 px-4 md:px-0'>
 							<motion.h2
-								className='text-5xl lg:text-6xl font-nosifer text-transparent bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text drop-shadow-lg transform rotate-1'
+								className='text-3xl md:text-4xl lg:text-5xl font-nosifer text-transparent bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text drop-shadow-lg transform rotate-1'
 								initial={{ opacity: 0, y: -30 }}
 								whileInView={{ opacity: 1, y: 0 }}
 								transition={{ duration: 0.8, ease: 'easeOut' }}
@@ -1212,7 +1375,6 @@ export default function Home() {
 							>
 								FAQ
 							</motion.h2>
-
 							<motion.div
 								className='space-y-6'
 								initial={{ opacity: 0, y: 30 }}

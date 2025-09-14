@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 export default function Footer() {
 	return (
 		<footer
-			className='relative bg-gradient-to-br from-black via-gray-900 to-slate-900 text-white overflow-hidden'
+			className='relative max-[768px]:pt-[100px] bg-gradient-to-br from-black via-gray-900 to-slate-900 text-white overflow-hidden'
 			style={{
 				clipPath: 'polygon(0 20%, 100% 0%, 100% 100%, 0% 100%)',
 			}}
@@ -18,10 +18,10 @@ export default function Footer() {
 			{/* Background overlay */}
 			<div className='absolute inset-0 bg-gradient-to-t from-black/20 to-transparent'></div>
 
-			<div className='relative z-10 max-w-6xl mx-auto px-4 pt-24 pb-12 space-y-8'>
+			<div className='relative z-10 max-w-6xl mx-auto px-4 pt-16 sm:pt-20 lg:pt-24 pb-8 sm:pb-12 space-y-6 sm:space-y-8'>
 				{/* Header section */}
-				<div className='text-center mb-12'>
-					<div className='font-nosifer text-4xl text-transparent bg-gradient-to-r from-yellow-400 via-pink-400 to-cyan-400 bg-clip-text mb-4 transform -rotate-1'>
+				<div className='text-center mb-8 sm:mb-12'>
+					<div className='font-nosifer text-2xl sm:text-3xl lg:text-4xl text-transparent bg-gradient-to-r from-yellow-400 via-pink-400 to-cyan-400 bg-clip-text mb-4 transform -rotate-1'>
 						$DINO FAMILY
 					</div>
 					<div className='flex justify-center'>
@@ -41,30 +41,30 @@ export default function Footer() {
 				</div>
 
 				{/* Links section */}
-				<div className='flex flex-wrap justify-center gap-8 text-lg'>
+				<div className='flex flex-wrap justify-center gap-4 sm:gap-6 lg:gap-8'>
 					<Link
 						to='/legal'
-						className='bg-teal-500 hover:bg-teal-400 px-6 py-3 rounded-xl font-bold text-white shadow-lg transform hover:scale-105 transition-all border-2 border-white'
+						className='bg-teal-500 hover:bg-teal-400 px-4 sm:px-6 py-2 sm:py-3 rounded-xl font-bold text-white shadow-lg transform hover:scale-105 transition-all border-2 border-white text-sm sm:text-base'
 					>
 						Privacy & Terms
 					</Link>
 					<a
 						href='#faq'
-						className='bg-teal-500 hover:bg-teal-400 px-6 py-3 rounded-xl font-bold text-white shadow-lg transform hover:scale-105 transition-all border-2 border-white'
+						className='bg-teal-500 hover:bg-teal-400 px-4 sm:px-6 py-2 sm:py-3 rounded-xl font-bold text-white shadow-lg transform hover:scale-105 transition-all border-2 border-white text-sm sm:text-base'
 					>
 						FAQ
 					</a>
 					<a
 						href='#presale'
-						className='bg-pink-500 hover:bg-pink-400 px-6 py-3 rounded-xl font-bold text-white shadow-lg transform hover:scale-105 transition-all border-2 border-white'
+						className='bg-pink-500 hover:bg-pink-400 px-4 sm:px-6 py-2 sm:py-3 rounded-xl font-bold text-white shadow-lg transform hover:scale-105 transition-all border-2 border-white text-sm sm:text-base'
 					>
 						Buy $DINO
 					</a>
 				</div>
 
 				{/* Disclaimer */}
-				<div className='text-center max-w-4xl mx-auto'>
-					<p className='text-cyan-100 font-roboto leading-relaxed text-sm'>
+				<div className='text-center max-w-4xl mx-auto px-2'>
+					<p className='text-cyan-100 font-roboto leading-relaxed text-xs sm:text-sm'>
 						🦖 Формирование будущего MemeCoins © Dino Family 2025 Все права
 						защищены.
 						<br className='hidden sm:block' />
@@ -81,22 +81,22 @@ export default function Footer() {
 				</div>
 
 				{/* Social links */}
-				<div className='flex justify-center gap-6 pt-8'>
+				<div className='flex justify-center gap-4 sm:gap-6 pt-6 sm:pt-8'>
 					<a
 						href='https://twitter.com'
-						className='w-12 h-12 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 grid place-items-center text-white text-xl hover:scale-110 transition-transform shadow-lg'
+						className='w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 grid place-items-center text-white text-lg sm:text-xl hover:scale-110 transition-transform shadow-lg'
 					>
 						<FaTwitter />
 					</a>
 					<a
 						href='https://t.me'
-						className='w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-blue-700 grid place-items-center text-white text-xl hover:scale-110 transition-transform shadow-lg'
+						className='w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gradient-to-br from-blue-500 to-blue-700 grid place-items-center text-white text-lg sm:text-xl hover:scale-110 transition-transform shadow-lg'
 					>
 						<FaTelegram />
 					</a>
 					<a
 						href='https://discord.gg'
-						className='w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 to-purple-700 grid place-items-center text-white text-xl hover:scale-110 transition-transform shadow-lg'
+						className='w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gradient-to-br from-purple-500 to-purple-700 grid place-items-center text-white text-lg sm:text-xl hover:scale-110 transition-transform shadow-lg'
 					>
 						<FaDiscord />
 					</a>
